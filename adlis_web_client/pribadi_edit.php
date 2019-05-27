@@ -4,7 +4,7 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
-		CURLOPT_URL => "http://localhost/adlis_web/api/pribadi/ubah",
+		CURLOPT_URL => "http://localhost/project-adlis/adlis_web/api/pribadi/ubah",
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_TIMEOUT => 30,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$err = curl_error($curl);
 	$response_tambah = json_decode($response_tambah, true);
 	if(isset($response_tambah['code']) == 200){
-		echo "<script type=\"text/javascript\">alert('Data Berhasil diubah...!!');window.location.href=\"http://localhost/adlis_web_client/pribadi.php\";</script>";
+		echo "<script type=\"text/javascript\">alert('Data Berhasil diubah...!!');window.location.href=\"http://localhost/project-adlis/adlis_web_client/pribadi.php\";</script>";
 	}else{
 		echo $response_tambah['data'];
 	}
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 if(isset($_GET['id'])){
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
-	  CURLOPT_URL => "http://localhost/adlis_web/api/pribadi?id=$_GET[id]",
+	  CURLOPT_URL => "http://localhost/project-adlis/adlis_web/api/pribadi?id=$_GET[id]",
 	  CURLOPT_RETURNTRANSFER => true,
 	  CURLOPT_TIMEOUT => 30,
 	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -44,7 +44,7 @@ if(isset($_GET['id'])){
 	if(isset($response['data'])){ 
 		foreach ($response['data'] as $value); ?>
 		<center><h3>Tambah Data Pribadi</h3>
-		<form class="form-horizontal" method="POST" action="http://localhost/adlis_web_client/pribadi_edit.php">
+		<form class="form-horizontal" method="POST" action="http://localhost/project-adlis/adlis_web_client/pribadi_edit.php">
 			<input type="hidden" name="id" value="<?php echo $value['id']; ?>"/>
 			Nama <br/>
 			<input type="text" placeholder="Nama" name="nama" value="<?php echo $value['nama']; ?>" required/><br/>

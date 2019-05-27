@@ -4,7 +4,7 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$curl = curl_init();
 	curl_setopt_array($curl, array(
-		CURLOPT_URL => "http://localhost/adlis_web/api/pribadi/tambah",
+		CURLOPT_URL => "http://localhost/project-adlis/adlis_web/api/pribadi/tambah",
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_TIMEOUT => 30,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$err = curl_error($curl);
 	$response_tambah = json_decode($response_tambah, true);
 	if(isset($response_tambah['code']) == 200){
-		echo "<script type=\"text/javascript\">alert('Data Berhasil ditambah...!!');window.location.href=\"http://localhost/adlis_web_client/pribadi.php\";</script>";
+		echo "<script type=\"text/javascript\">alert('Data Berhasil ditambah...!!');window.location.href=\"http://localhost/project-adlis/adlis_web_client/pribadi.php\";</script>";
 	}else{
 		
 		print_r($_POST);
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 } 
 //Curl untuk menghapus data dari api ?>
 <center><h3>Tambah Data Pribadi</h3>
-<form class="form-horizontal" method="POST" action="http://localhost/adlis_web_client/pribadi_tambah.php">
+<form class="form-horizontal" method="POST" action="http://localhost/project-adlis/adlis_web_client/pribadi_tambah.php">
 	Nama <br/>
 	<input type="text" placeholder="Nama Lengkap" name="nama" required/><br/>
 	Jenis Kelamin <br/>
