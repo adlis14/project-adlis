@@ -43,7 +43,7 @@ if(isset($_GET['id'])){
 	$response = json_decode($response, true);
 	if(isset($response['data'])){ 
 		foreach ($response['data'] as $value); ?>
-		<center><h3>Tambah Data Pribadi</h3>
+		<center><h3>Edit Data Pribadi</h3>
 		<form class="form-horizontal" method="POST" action="http://localhost/project-adlis/adlis_web_client/pribadi_edit.php">
 			<input type="hidden" name="id" value="<?php echo $value['id']; ?>"/>
 			Nama <br/>

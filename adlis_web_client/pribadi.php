@@ -44,12 +44,12 @@ if(isset($_GET['hapus']) && $_GET['hapus'] != ''){
 <p><a href="http://localhost/project-adlis/adlis_web_client/pribadi_tambah.php">Tambah</a></p>
 <table border="1" cellspacing="0" cellpadding="5" style='border-collapse:collapse;'>
 	<tr>
-		<td>Nama</td>
-		<td>Jenis Kelamin</td>
-		<td>Tanggal Lahir</td>
-		<td>Alamat</td>
-		<td>Telepon</td>
-		<td>Aksi</td>
+		<td><center>Nama</center></td>
+		<td><center>Jenis Kelamin</center></td>
+		<td><center>Tanggal Lahir</center></td>
+		<td><center>Alamat</center></td>
+		<td><center>Telepon</center></td>
+		<td><center>Aksi</center></td>
 		<?php 
 	if(isset($response['data'])){ 
 		foreach($response['data'] as $value){ ?>
